@@ -2,7 +2,7 @@
   "name": "backmarify",
   "version": "0.0.0",
   "description": "A Backbone, Marionette, Browserify boilerplate",
-  "main": "app.js",
+  "main": "./src/main.js",
   "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com/)",
   "licenses": [
     {
