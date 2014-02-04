@@ -20,7 +20,7 @@
     "browserify": "3.14.1",
     "mocha": "1.17.1",
     "karma-mocha": "0.1.1",
-    "karma-browserifast": "0.1.1",
+    "karma-browserify": "0.0.6",
     "http-server": "0.6.1",
     "jshint": "2.4.3"
   },
