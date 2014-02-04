@@ -14,7 +14,7 @@ copy-files:
 	@cp ./src/index.html ./build/index.html
 
 jshint:
-	@./node_modules/jshint/bin/jshint ./src/**/*.js
+	@./node_modules/jshint/bin/jshint ./src/*.js
 
 karma:
 	@karma start
