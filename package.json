@@ -1,0 +1,37 @@
+{
+  "name": "backmarify",
+  "version": "0.0.0",
+  "description": "A Backbone, Marionette, Browserify boilerplate",
+  "main": "app.js",
+  "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com/)",
+  "licenses": [
+    {
+    "type": "MIT",
+    "url": "https://github.com/shapeshed/backmarify/raw/master/LICENSE"
+    }
+  ],
+  "dependencies":  {
+    "jquery": "2.1.0-beta3",
+    "underscore": "1.5.2",
+    "backbone": "1.1.0",
+    "backbone.marionette": "1.2.3"
+  },
+  "devDependencies": {
+    "browserify": "3.14.1",
+    "mocha": "1.17.1",
+    "karma-mocha": "0.1.1",
+    "karma-browserifast": "0.1.1",
+    "http-server": "0.6.1",
+    "jshint": "2.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shapeshed/backmarify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shapeshed/backmarify/issues"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}

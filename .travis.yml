@@ -1,0 +1,5 @@
+language: node_js
+before_script: npm install -g browserify
+node_js:
+  - "0.8"
+  - "0.10"
