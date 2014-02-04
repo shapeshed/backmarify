@@ -1,4 +1,4 @@
 language: node_js
-before_script: npm install -g browserify
+before_script: npm install -g browserify karma
 node_js:
   - "0.10"
