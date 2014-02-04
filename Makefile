@@ -1,16 +1,23 @@
+build: mkbuild-dir copy-files browserify
 test: jshint karma 
 
 browserify:
-	@./node_modules/browserify/bin/cmd.js app.js -d -o main.js
+	@./node_modules/browserify/bin/cmd.js ./src/main.js -d -o ./build/main.js
 
-server: 
-	@./node_modules/http-server/bin/http-server
-		
-watch:
-	@while true; do inotifywait -e modify ./; make browserify; done
+copy-files:
+	@cp ./src/index.html ./build/index.html
+
+jshint:
+	@./node_modules/jshint/bin/jshint ./src/**/*.js
 
 karma:
 	@karma start
 
-jshint:
-	@./node_modules/jshint/bin/jshint app.js
+mkbuild-dir:
+	@mkdir -p ./build
+
+server: 
+	@./node_modules/http-server/bin/http-server build
+		
+watch:
+	@while true; do inotifywait -e modify ./; make browserify; done
