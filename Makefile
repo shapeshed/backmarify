@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 JSMD5 = $(shell md5sum ./build/main.js.tmp | awk '{ print $$1 }')
+CSSMD5 = $(shell md5sum ./build/screen.css.tmp | awk '{ print $$1 }')
 
-build: clearbuild-dir mkbuild-dir copy-files browserify md5-js replace-js-string remove-tmp-files
+build: clearbuild-dir mkbuild-dir copy-files browserify md5-js replace-js-string generate-less replace-css-string md5-css remove-tmp-files
 test: jshint karma 
 
 browserify:
@@ -39,6 +40,15 @@ uglify:
 
 remove-tmp:
 	@rm build/main.js.tmp
+
+generate-less:
+	@./node_modules/less/bin/lessc ./src/less/main.less > ./build/screen.css.tmp
+
+replace-css-string:
+	@find ./build -name index.html | xargs sed -i "s/screen\.css/screen-$(CSSMD5)\.css/" 
 		
+md5-css: 
+	@mv ./build/screen.css.tmp ./build/screen-$(CSSMD5).css 
+
 watch:
-	@while true; do inotifywait --exclude .swp --exclude .swo -e modify ./src; make build; done
+	@while true; do inotifywait --exclude .swp --exclude .swo -e modify ./src/**/*; make build; done
