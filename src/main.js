@@ -1,9 +1,7 @@
-var $ = require('jquery')(window);
+var $ = require('jquery');
 var Backbone = require('backbone');
-var Wreqr = require('../node_modules/backbone.marionette/node_modules/backbone.wreqr');
+Backbone.$  = $;
 var Marionette = require('backbone.marionette');
-Marionette.$ = Backbone.$ = $;
-Backbone.Wreqr = Wreqr;
 
 var MyApp = new Marionette.Application();
 MyApp.addInitializer(function(options){
